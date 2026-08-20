@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1320">
+  <meta name="description" content="مجله رادار مسکن؛ پایش و تحلیل خبرهای بازار مسکن ایران و جهان">
+  <meta name="color-scheme" content="dark light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>مجله رادار مسکن | نسخه چهارم</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">پرش به محتوای اصلی</a>
+
+  <header class="site-header" id="top">
+    <div class="header-shell">
+      <a class="brand" href="#top" aria-label="مجله رادار مسکن؛ صفحه نخست">
+        <span class="brand-logo"><img src="assets/logo.jpg" alt="نشان حامی ویلا گستر" width="64" height="64"></span>
+        <span class="brand-copy">
+          <strong>مجله رادار <em>مسکن</em></strong>
+          <small>دیده‌بان خبری و تحلیلی بازار ملک</small>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <span class="connection-pill" id="connectionPill" role="status">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span id="connectionText">در حال آماده‌سازی</span>
+        </span>
+        <button class="icon-button theme-button" id="themeToggle" type="button" aria-label="تغییر پوسته" title="پوسته خودکار">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="ناوبری اصلی">
+      <div class="nav-shell">
+        <a href="#market">نبض بازار</a>
+        <a href="#signals">سیگنال‌ها</a>
+        <a href="#news">تازه‌ها</a>
+        <a href="#newsletter">خبرنامه</a>
+        <button type="button" id="savedOnly" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4.8A1.8 1.8 0 0 1 7.8 3h8.4A1.8 1.8 0 0 1 18 4.8V21l-6-3.5L6 21V4.8Z"/></svg>
+          ذخیره‌شده‌ها
+          <span id="savedCount">۰</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="mainContent">
+    <section class="hero section-shell" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> نسخه چهارم رادار مسکن</p>
+        <h1 id="heroTitle">خبر کمتر؛ <mark>دید بهتر</mark> به بازار مسکن</h1>
+        <p>پایش پیوسته خبرهای ایران و جهان، ترجمه فارسی، شاخص‌های قابل‌اتکا و ابزارهای تصمیم‌یار در یک تجربه سریع، امن و در دسترس.</p>
+        <div class="hero-meta">
+          <span id="updatedAt">آخرین برداشت: —</span>
+          <span id="nextUpdate">دور بعد: —</span>
+        </div>
+      </div>
+      <div class="hero-radar" aria-hidden="true">
+        <div class="radar-grid"><i></i><i></i><i></i><span></span><b></b></div>
+        <p><strong id="heroCount">۰</strong><span>خبر در رادار</span></p>
+      </div>
+    </section>
+
+    <section class="market-section section-shell" id="market" aria-labelledby="marketTitle">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">داشبورد روزانه</p>
+          <h2 id="marketTitle">نبض بازار در یک نگاه</h2>
+        </div>
+        <div class="section-note" id="marketUpdated">در حال دریافت شاخص‌ها…</div>
+      </div>
+
+      <div class="market-layout">
+        <article class="analysis-card">
+          <div class="analysis-head">
+            <span class="analysis-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 18V9m5 9V5m5 13v-7m5 7V3M2 21h20"/></svg>
+            </span>
+            <div><span>تحلیل روز</span><small id="analysisMode">بر پایه رصد خبری</small></div>
+          </div>
+          <h3 id="analysisTitle">در حال ساخت تصویر روز بازار…</h3>
+          <p id="analysisBody">داده‌های تازه پس از بارگذاری خبرها نمایش داده می‌شوند.</p>
+          <div class="analysis-tags" id="analysisTags" aria-label="نکات کلیدی"></div>
+          <p class="analysis-disclaimer">این بخش گزارش تحلیلی است و توصیه خرید یا سرمایه‌گذاری محسوب نمی‌شود.</p>
+        </article>
+
+        <div class="indicator-panel">
+          <div class="indicator-grid" id="indicatorGrid" aria-live="polite"></div>
+          <article class="chart-card" aria-labelledby="chartTitle">
+            <div class="chart-head">
+              <div><h3 id="chartTitle">روند انتشار هفت‌روزه</h3><p>برای جزئیات روی ستون‌ها تمرکز کنید.</p></div>
+              <strong id="weekTotal">۰ خبر</strong>
+            </div>
+            <div class="mini-chart" id="weekChart" role="group" aria-label="نمودار تعداد خبرهای هفت روز اخیر"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="signals-section section-shell" id="signals" aria-labelledby="signalsTitle">
+      <div class="section-heading compact">
+        <div>
+          <p class="kicker">رصد لحظه‌ای</p>
+          <h2 id="signalsTitle">آخرین سیگنال‌های بازار</h2>
+        </div>
+        <span class="live-label"><i></i> زنده از جریان خبر</span>
+      </div>
+      <div class="signal-rail" id="signalRail" aria-live="polite"></div>
+    </section>
+
+    <section class="top-stories section-shell" id="topStories" aria-labelledby="topStoriesTitle" hidden>
+      <div class="section-heading compact">
+        <div>
+          <p class="kicker">منتخب مخاطبان</p>
+          <h2 id="topStoriesTitle">پربیننده‌ترین خبرها</h2>
+        </div>
+      </div>
+      <div class="top-story-grid" id="topStoryGrid"></div>
+    </section>
+
+    <section class="news-section section-shell" id="news" aria-labelledby="newsTitle">
+      <div class="section-heading news-heading">
+        <div>
+          <p class="kicker">خوراک خبری</p>
+          <h2 id="newsTitle">تازه‌ترین خبرها</h2>
+        </div>
+        <p id="resultCount" role="status" aria-live="polite">در حال بارگذاری…</p>
+      </div>
+
+      <div class="news-toolbar" aria-label="ابزارهای فیلتر اخبار">
+        <label class="search-field" for="searchInput">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+          <input id="searchInput" type="search" placeholder="جستجو در عنوان، خلاصه یا منبع…" autocomplete="off">
+          <span class="search-spinner" id="searchSpinner" aria-hidden="true"></span>
+          <button type="button" id="clearSearch" aria-label="پاک‌کردن جستجو" title="پاک‌کردن" hidden>×</button>
+        </label>
+
+        <div class="filter-chips" role="group" aria-label="منطقه خبر">
+          <button type="button" class="active" data-filter="all" aria-pressed="true">همه</button>
+          <button type="button" data-filter="iran" aria-pressed="false">ایران</button>
+          <button type="button" data-filter="world" aria-pressed="false">جهان</button>
+        </div>
+
+        <label class="sort-field" for="sortBy">
+          <span>مرتب‌سازی</span>
+          <select id="sortBy">
+            <option value="recent">جدیدترین</option>
+            <option value="popular">پربیننده‌ترین</option>
+            <option value="discussed">پربحث‌ترین</option>
+          </select>
+        </label>
+
+        <button class="refresh-button" id="refreshButton" type="button">
+          <span class="button-spinner" aria-hidden="true"></span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6v5h-5M4 18v-5h5m10.1-3A8 8 0 0 0 5.3 6.8L4 11m16 2-1.3 4.2A8 8 0 0 1 4.9 14"/></svg>
+          <span class="button-label">برداشت تازه</span>
+        </button>
+      </div>
+
+      <div class="active-filter" id="activeFilter" hidden>
+        <span id="activeFilterText"></span>
+        <button type="button" id="resetFilters">حذف فیلترها</button>
+      </div>
+
+      <div class="news-grid" id="newsGrid" aria-live="polite" aria-busy="true"></div>
+      <button class="load-more" id="loadMore" type="button" hidden>نمایش خبرهای بیشتر</button>
+    </section>
+
+    <section class="property-search section-shell" aria-labelledby="propertyTitle">
+      <div class="property-art" aria-hidden="true">
+        <svg viewBox="0 0 160 130"><path d="M18 72 80 20l62 52v47H18V72Z"/><path d="M63 119V79h34v40M40 62V34h20v11"/><circle cx="125" cy="36" r="19"/><path d="m139 50 14 14"/></svg>
+      </div>
+      <div class="property-copy">
+        <p class="kicker">جستجوی کاربردی</p>
+        <h2 id="propertyTitle">ملک بعدی‌تان را پیدا کنید</h2>
+        <p>عبارت و نوع معامله را وارد کنید؛ جستجو در پلتفرم منتخب شما باز می‌شود.</p>
+        <form id="propertyForm">
+          <label><span>شهر، محله یا نوع ملک</span><input id="propertyQuery" type="search" value="رویان ویلا" placeholder="مثلاً رویان ویلا"></label>
+          <label><span>نوع معامله</span><select id="propertyType"><option value="buy">خرید</option><option value="rent">رهن و اجاره</option><option value="sell">فروش</option></select></label>
+          <div class="property-buttons">
+            <button type="button" data-platform="divar" class="divar-button">دیوار</button>
+            <button type="button" data-platform="sheypoor" class="sheypoor-button">شیپور</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="newsletter section-shell" id="newsletter" aria-labelledby="newsletterTitle">
+      <div class="newsletter-copy">
+        <span class="mail-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5v-11Z"/><path d="m4 7 8 6 8-6"/></svg>
+        </span>
+        <div><p class="kicker">خلاصه‌ای که ارزش بازکردن دارد</p><h2 id="newsletterTitle">رادار هفتگی را ایمیل بگیرید</h2><p>مهم‌ترین روندها و خبرهای مسکن؛ بدون پیام اضافه و با امکان لغو فوری.</p></div>
+      </div>
+      <form id="newsletterForm" novalidate>
+        <label for="newsletterEmail">نشانی ایمیل</label>
+        <div class="email-row"><input id="newsletterEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com" required><button type="submit"><span class="button-spinner" aria-hidden="true"></span><span>عضویت رایگان</span></button></div>
+        <label class="consent"><input id="newsletterConsent" type="checkbox" required><span>با دریافت خبرنامه و سیاست حفظ حریم خصوصی موافقم.</span></label>
+        <p class="form-message" id="newsletterMessage" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell section-shell">
+      <div class="footer-brand">
+        <img src="assets/logo.jpg" alt="" width="54" height="54">
+        <div><strong>شرکت حامی ویلا گستر</strong><span>صاحب‌امتیاز مجله رادار مسکن</span></div>
+      </div>
+      <div class="footer-contact">
+        <span>مازندران، نور، رویان</span>
+        <a href="mailto:Hamivillagostar@gmail.com">Hamivillagostar@gmail.com</a>
+        <a href="https://instagram.com/hami.villa" target="_blank" rel="noopener noreferrer">@hami.villa</a>
+        <a href="tel:+989123583465" dir="ltr">+98 912 358 3465</a>
+      </div>
+      <p class="footer-note">خبرها از منابع ثالث گردآوری می‌شوند. برای بررسی دقیق، همواره متن و منبع اصلی را ببینید. ترجمه‌های ماشینی ممکن است نیازمند بازبینی باشند.</p>
+    </div>
+  </footer>
+
+  <dialog class="reader-dialog" id="readerDialog" aria-labelledby="readerTitle">
+    <div class="reader-shell">
+      <div class="reader-toolbar">
+        <button type="button" class="dialog-close" data-close="readerDialog" aria-label="بستن حالت مطالعه">×</button>
+        <span class="reader-label">حالت مطالعه</span>
+        <div class="reader-tools">
+          <button type="button" id="readerDecrease" aria-label="کوچک‌کردن متن">الف−</button>
+          <button type="button" id="readerIncrease" aria-label="بزرگ‌کردن متن">الف+</button>
+          <button type="button" id="readerPrint" aria-label="چاپ خبر">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6v-7Z"/></svg>
+          </button>
+        </div>
+      </div>
+      <article class="reader-article" id="printArea">
+        <div class="reader-source" id="readerSource"></div>
+        <h2 id="readerTitle"></h2>
+        <p class="reader-meta" id="readerMeta"></p>
+        <div class="reader-body" id="readerBody"></div>
+        <div class="reader-actions" id="readerActions"></div>
+      </article>
+    </div>
+  </dialog>
+
+  <dialog class="report-dialog" id="reportDialog" aria-labelledby="reportTitle">
+    <form method="dialog" class="dialog-card" id="reportForm">
+      <button type="button" class="dialog-close" data-close="reportDialog" aria-label="بستن">×</button>
+      <p class="kicker">کنترل کیفیت</p>
+      <h2 id="reportTitle">گزارش اشکال در خبر</h2>
+      <p>نوع مشکل را مشخص کنید تا تیم تحریریه بتواند آن را بررسی کند.</p>
+      <input type="hidden" id="reportNewsId" name="news_id">
+      <label><span>نوع اشکال</span><select id="reportType" name="type" required><option value="translation">اشکال در ترجمه</option><option value="facts">اطلاعات نادرست یا قدیمی</option><option value="source">مشکل منبع یا پیوند</option><option value="other">سایر</option></select></label>
+      <label><span>توضیح کوتاه</span><textarea id="reportNote" name="note" rows="4" maxlength="500" placeholder="اختیاری"></textarea></label>
+      <div class="dialog-actions"><button type="button" class="secondary" data-close="reportDialog">انصراف</button><button type="submit" class="primary">ارسال گزارش</button></div>
+      <p class="form-message" id="reportMessage" role="status"></p>
+    </form>
+  </dialog>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+  <button class="back-top" id="backTop" type="button" aria-label="بازگشت به بالای صفحه">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>
+  </button>
+
+  <noscript><div class="noscript">برای نمایش و فیلتر خبرها، جاوااسکریپت مرورگر را فعال کنید.</div></noscript>
+</body>
+</html>
